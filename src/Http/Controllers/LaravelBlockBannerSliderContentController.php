@@ -38,7 +38,10 @@ class LaravelBlockBannerSliderContentController extends Controller
         //dd("pass...");
         LaravelBlockBannerSliderContentConfig::create([
             "element_id" => $element_id,
-            "height" => request()->height
+            "height" => request()->height,
+            "is_auto_play" => request()->is_auto_play,
+            "have_arrow" => request()->have_arrow,
+            "have_pagination" => request()->have_pagination,
         ]);
         return redirect()->route("laravel_block_banner_slider_content.index", $element_id);
     }
@@ -80,6 +83,7 @@ class LaravelBlockBannerSliderContentController extends Controller
         $slider = new LaravelBlockBannerSliderContent;
         $slider->element_id = $element_id;
         $slider->content = $content;
+        $slider->animation = request()->animation;
         $slider->display_order = $display_order;
 
         $slider->addMediaFromBase64(request()->uic_base64_image, ["image/jpeg", "image/png"])->toMediaCollection('laravel_block_banner_slider_content');
@@ -113,6 +117,7 @@ class LaravelBlockBannerSliderContentController extends Controller
 
         $slider = LaravelBlockBannerSliderContent::find($id);
         $slider->content = $content;
+        $slider->animation = request()->animation;
 
         if ((request()->uic_base64_image)) {
             $slider->addMediaFromBase64(request()->uic_base64_image, ["image/jpeg", "image/png"])->toMediaCollection('laravel_block_banner_slider_content');

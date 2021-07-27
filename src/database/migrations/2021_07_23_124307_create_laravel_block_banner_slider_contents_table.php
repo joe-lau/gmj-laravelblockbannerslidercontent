@@ -17,6 +17,7 @@ class CreateLaravelBlockBannerSliderContentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger("element_id");
             $table->longText('content')->nullable();
+            $table->string("animation")->nullable();
             $table->integer("display_order");
             $table->timestamps();
         });

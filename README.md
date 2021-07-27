@@ -1,4 +1,4 @@
-# gmj-laravelblockwshapegallery
+# gmj-laravelblockbannerslidercontent
 
 Laravel Block for backend and frontend - need tailwindcss support
 

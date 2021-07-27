@@ -45,6 +45,15 @@
                 </div>
             @endforeach
 
+            <div class="mt-7">
+                <label for="animation" class="block mb-2 cursor-pointer">
+                    Animation
+                </label>
+                <select name="animation" id="animation" class="appearance-none w-full px-4 py-2 focus:outline-none">
+                    <option value="">-- None --</option>
+                    <option value="fade-up" @if($slider->animation == "fade-up") selected @endif>Fade In Up</option>
+                </select>
+            </div>
 
             <div class="mt-4 text-right">
                 <x-backend.link href="{{ url()->previous() }}">Back</x-backend.link>
@@ -109,10 +118,24 @@
             },
             templates : [
                 {
-                    title: 'Banner Slider Content',
-                    description: 'have container, mx-auto, px-8',
-                    content: ` <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20 flex justify-center items-center text-white">
-                        <div class="text-center px-10">
+                    title: 'Banner Slider Content Center',
+                    description: 'full page',
+                    content: `<div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20 flex justify-center items-center text-white">
+                        <div class="banner_slider_content_content text-center px-10">
+                        <div class="lg:text-6xl font-bold md:text-4xl text-3xl">TITLE</div>
+                        <div class="text-xs lg:text-lg">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</div>
+                        <div class="mt-4">
+                            <a class="inline-block px-8 py-2 border rounded-full mx-2"> Link </a>
+                            <a class="inline-block px-8 py-2 border rounded-full mx-2"> Link </a>
+                        </div>
+                        </div>
+                    </div>`
+                },
+                {
+                    title: 'Banner Slider Content Left',
+                    description: 'full page',
+                    content: `<div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20 flex items-center text-white">
+                        <div class="banner_slider_content_content px-10">
                         <div class="lg:text-6xl font-bold md:text-4xl text-3xl">TITLE</div>
                         <div class="text-xs lg:text-lg">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</div>
                         <div class="mt-4">

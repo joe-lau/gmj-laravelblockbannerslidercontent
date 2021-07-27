@@ -1,22 +1,25 @@
 <?php
 
-namespace GMJ\LaravelBlockBannerSlider\View\Components;
+namespace GMJ\LaravelBlockBannerSliderContent\View\Components;
 
-use GMJ\LaravelBlockBannerSlider\Models\LaravelBlockBannerSlider;
+use GMJ\LaravelBlockBannerSliderContent\Models\LaravelBlockBannerSliderContent;
+use GMJ\LaravelBlockBannerSliderContent\Models\LaravelBlockBannerSliderContentConfig;
 use Illuminate\View\Component;
 
 class Frontend extends Component
 {
     public $sliders = [];
     public $id;
+    public $config;
     public function __construct($id)
     {
         $this->id = $id;
-        $this->sliders = LaravelBlockBannerSlider::where("element_id", $id)->orderBy("display_order")->get();
+        $this->config = LaravelBlockBannerSliderContentConfig::where("element_id", $id)->first();
+        $this->sliders = LaravelBlockBannerSliderContent::where("element_id", $id)->orderBy("display_order")->get();
     }
 
     public function render()
     {
-        return view("laravelblockbannerslider::components.frontend.show");
+        return view("laravelblockbannerslidercontent::components.frontend.show");
     }
 }

@@ -17,6 +17,9 @@ class CreateLaravelBlockBannerSliderContentConfigsTable extends Migration
             $table->id();
             $table->unsignedBigInteger("element_id");
             $table->integer("height");
+            $table->integer("is_auto_play")->default(0);
+            $table->integer("have_arrow")->default(0);
+            $table->integer("have_pagination")->default(0);
             $table->timestamps();
         });
     }
