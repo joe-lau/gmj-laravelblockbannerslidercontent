@@ -18,7 +18,7 @@ class LaravelBlockBannerSliderContentController extends Controller
 
     public function index($element_id)
     {
-        $config = LaravelBlockBannerSliderContentConfig::where("element_id", $element_id)->get();
+        $config = LaravelBlockBannerSliderContentConfig::where("element_id", $element_id)->first();
         $element = \App\Models\Element::find($element_id);
 
         if (!$config) {

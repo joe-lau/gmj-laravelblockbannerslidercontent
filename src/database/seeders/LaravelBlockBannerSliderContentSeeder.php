@@ -15,7 +15,7 @@ class LaravelBlockBannerSliderContentSeeder extends Seeder
     {
         \App\Models\ElementTemplate::insert(
             [
-                "title" => "Laravel Block Banner Slider",
+                "title" => "Laravel Block Banner Slider Content",
                 "type" => "default",
                 "element_name" => "laravel_block_banner_slider_content",
                 "component" => "laravelblockbannerslidercontent-frontend",
