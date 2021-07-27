@@ -29,6 +29,6 @@ class CreateLaravelBlockBannerSliderContentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('laravel_block_banner_sliders');
+        Schema::dropIfExists('laravel_block_banner_slider_contents');
     }
 }
